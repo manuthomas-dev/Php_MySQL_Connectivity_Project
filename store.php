@@ -1,4 +1,14 @@
+<?php
+  if (isset($_GET['book']))
+  {
+    $book = $_GET['book'];
 
+    session_start();
+    $_SESSION['selectedBook'] = $book;
+    header("Location: cart.php");
+    exit();
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <title>W3.CSS Template</title>
@@ -31,6 +41,20 @@ body {font-family: "Lato", sans-serif}
 }
 
 </style>
+
+<script>
+  $(document).ready(function(){
+    $('.product-btn').click(function(){
+        var clickBtnValue = $(this).val();
+        var ajaxurl = 'ajax.php',
+        data =  {'action': clickBtnValue};
+        $.post(ajaxurl, data, function (response) {
+            // Response div goes here.
+            alert("action performed successfully");
+        });
+    });
+  });
+</script>
 <body>
 
 <!-- Navbar -->
@@ -51,7 +75,6 @@ body {font-family: "Lato", sans-serif}
       <h2 class="w3-wide w3-center">OUR COLLECTIONS</h2>
       <p class="w3-opacity w3-center"><i>Remember to book your tickets!</i></p><br>      
       <?php
-
           require "mysqli_connect.php";
 
           $q1 = "select * from books";
@@ -71,8 +94,8 @@ body {font-family: "Lato", sans-serif}
               echo '<p class="limit-text5">'. $row["bookDescription"].'</p>';
               echo '</div>';
               echo '<div class="w3-container w3-white">';
-              echo '<button id="'. $row["bookId"].'" class="w3-button w3-black w3-margin-bottom">Buy Now</button>';
-              echo '</div>';
+              echo '<p>CAD '. $row["bookPrice"].'</p>';
+              echo '<a href="store.php?book='. $row["bookId"].'" class=" product-btn w3-button w3-black w3-margin-bottom">Buy Now</a>';              echo '</div>';
               echo '</div>';
           
             }

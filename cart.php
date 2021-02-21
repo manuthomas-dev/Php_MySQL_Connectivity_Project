@@ -1,6 +1,4 @@
-<?php
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <title>W3.CSS Template</title>
@@ -27,32 +25,40 @@ body {font-family: "Lato", sans-serif}
   </div>
 </div>
 
-<!-- Page content -->
-<div class="w3-content" style="max-width:2000px;margin-top:46px">
+<?php
+  session_start();
+  if(isset($_SESSION['selectedBook']) || !empty($_SESSION['selectedBook'])){
+    echo '<p>'.$_SESSION['selectedBook'].'</p>';
+  }
+?>
 
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/la.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>   
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+    <h2 class="w3-wide w3-center">Check Out</h2>
+      <div class="w3-col m12">
+        <form action="cart.php" >
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="First Name" required name="FirstName">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Last Name" required name="LastName">
+            </div>
+          </div>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-twothird">
+              <input class="w3-input w3-border" type="text" placeholder="Address Line 1" required name="AddressLine1">
+            </div>
+          </div>
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-twothird">
+              <input class="w3-input w3-border" type="text" placeholder="Address Line 2" required name="AddressLine2">
+            </div>
+           </div>
+          <button class="w3-button w3-black w3-section w3-left" type="submit">SUBMIT</button>
+        </form>
+      </div>
     </div>
   </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/ny.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/chicago.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
-    </div>
-  </div>
-
  
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
