@@ -28,31 +28,22 @@ body {font-family: "Lato", sans-serif}
   </div>
 </div>
 
-<!-- Page content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
+  <div class="w3-display-container w3-center">
+      <img src="images/default/1.jpg" style="width:100%">
+      <div class="w3-display-middle w3-container w3-text-white w3-padding-32 w3-hide-small">
+          <h1 style="font-size:80px;" >MY BOOKSTORE</h1>
+      </div>
+  </div>
+</div>
 
-  <!-- Automatic Slideshow Images -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/la.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Los Angeles</h3>
-      <p><b>We had the best time playing at Venice Beach!</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/ny.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>New York</h3>
-      <p><b>The atmosphere in New York is lorem ipsum.</b></p>    
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/w3images/chicago.jpg" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Chicago</h3>
-      <p><b>Thank you, Chicago - A night we won't forget.</b></p>    
-    </div>
-  </div>
+<div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">Enchanting the Mind, One Book at a Time</h2>
+    <p class="w3-justify">At Book Outlet, our core focus is Enchanting the Mind. This is our why, our purpose, our passion behind 
+    everything we do. We believe we are not just selling books, rather we are impacting the lives of millions of people 
+    both locally and across the globe.As readers, we know the joy that reading brings but we also know how expensive new 
+    books can be. That is why we strive to offer read-iculously low prices on great titles, so that the joy of reading can be accessible to all.</p>
+</div>
 
  
 <!-- Footer -->

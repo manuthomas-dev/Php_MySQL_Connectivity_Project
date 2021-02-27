@@ -19,3 +19,24 @@ totalInvCount INT NOT NULL,
 availInvCount INT NOT NULL,
 FOREIGN KEY(bookId) REFERENCES books(bookId)
 );
+
+CREATE TABLE Orders (
+OrderId INT PRIMARY KEY AUTO_INCREMENT,
+firstName  VARCHAR(50) NOT NULL,
+lastName  VARCHAR(50) NOT NULL,
+addressLine1  VARCHAR(50) NOT NULL,
+addressLine2  VARCHAR(50),
+cardName  VARCHAR(50) NOT NULL,
+cardNumber VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE OrderInventory (
+OrderInventory INT PRIMARY KEY AUTO_INCREMENT,
+OrderId INT,
+bookId INT,
+quantity INT NOT NULL,
+billAmount DECIMAL(18,2)  NOT NULL,
+dateOfPurchase DATETIME  NOT NULL,
+FOREIGN KEY (bookId) REFERENCES books(bookId),
+FOREIGN KEY (OrderId) REFERENCES orders(OrderId)
+);
